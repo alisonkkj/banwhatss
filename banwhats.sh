@@ -69,11 +69,11 @@ desbanir_numero() {
   echo -e "\e[1;32mNúmero $numero desbanido com sucesso!\e[0m"
 }
 
-blindar_numero() {
+blindar_numero_contra_ban/spam() {
   input_numero
   echo -e "\e[1;33mIniciando blindagem do número $numero...\e[0m"
   spinner 80
-  echo -e "\e[1;32mNúmero $numero está blindado contra banimento!\e[0m"
+  echo -e "\e[1;32mNúmero $numero está blindado contra banimento/spam!\e[0m"
 }
 
 banir_instagram() {
@@ -109,6 +109,7 @@ while true; do
 done
 
 clear
+
 
 
 
