@@ -1,3 +1,5 @@
+#!/bin/bash
+
 show_logo() {
   clear
   echo -e "\e[1;34m  ____    _    _   _ _    _    _   _ _____  \e[0m"
@@ -9,6 +11,7 @@ show_logo() {
   echo -e "\e[1;35m                by alisonkkjj yt             \e[0m"
   echo
 }
+
 input_numero() {
   while true; do
     read -p "Digite o número (somente números, ex: 5511999998888): " numero
@@ -32,35 +35,51 @@ input_instagram() {
   done
 }
 
+spinner() {
+  local duration=$1
+  local elapsed=0
+  local spin='-\|/'
+
+  while [ $elapsed -lt $duration ]; do
+    for i in $(seq 0 3); do
+      printf "\r\e[1;33mProcessando %c\e[0m" "${spin:$i:1}"
+      sleep 1
+      ((elapsed++))
+      [ $elapsed -ge $duration ] && break
+    done
+  done
+  echo -e "\r\e[1;32mProcesso concluído!       \e[0m"
+}
+
 abrir_youtube() {
   am start -a android.intent.action.VIEW -d "https://www.youtube.com/@alisonkkj"
 }
 
 banir_numero() {
   input_numero
-  echo -e "\e[1;33mProcessando banimento do número $numero...\e[0m"
-  sleep 80
+  echo -e "\e[1;33mIniciando banimento do número $numero...\e[0m"
+  spinner 80
   echo -e "\e[1;32mNúmero $numero banido com sucesso!\e[0m"
 }
 
 desbanir_numero() {
   input_numero
-  echo -e "\e[1;33mProcessando desbanimento do número $numero...\e[0m"
-  sleep 80
+  echo -e "\e[1;33mIniciando desbanimento do número $numero...\e[0m"
+  spinner 80
   echo -e "\e[1;32mNúmero $numero desbanido com sucesso!\e[0m"
 }
 
 blindar_numero() {
   input_numero
-  echo -e "\e[1;33mProcessando blindagem do número $numero...\e[0m"
-  sleep 80
+  echo -e "\e[1;33mIniciando blindagem do número $numero...\e[0m"
+  spinner 80
   echo -e "\e[1;32mNúmero $numero está blindado contra banimento!\e[0m"
 }
 
 banir_instagram() {
   input_instagram
-  echo -e "\e[1;33mProcessando banimento do usuário @$usuario...\e[0m"
-  sleep 80
+  echo -e "\e[1;33mIniciando banimento do usuário @$usuario...\e[0m"
+  spinner 80
   echo -e "\e[1;32mUsuário @$usuario banido com sucesso no Instagram!\e[0m"
 }
 
@@ -90,5 +109,6 @@ while true; do
 done
 
 clear
+
 
 
