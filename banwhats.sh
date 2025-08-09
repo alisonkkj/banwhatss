@@ -69,18 +69,11 @@ desbanir_numero() {
   echo -e "\e[1;32mNúmero $numero desbanido com sucesso!\e[0m"
 }
 
-blindar_numero_contra_ban/spam() {
+blindar_numero() {
   input_numero
-  echo -e "\e[1;33mIniciando blindagem do número $numero...\e[0m"
+  echo -e "\e[1;33mIniciando blindagem do número $numero contra ban e spam...\e[0m"
   spinner 80
-  echo -e "\e[1;32mNúmero $numero está blindado contra banimento/spam!\e[0m"
-}
-
-banir_instagram() {
-  input_instagram
-  echo -e "\e[1;33mIniciando banimento do usuário @$usuario...\e[0m"
-  spinner 80
-  echo -e "\e[1;32mUsuário @$usuario banido com sucesso no Instagram!\e[0m"
+  echo -e "\e[1;32mNúmero $numero está blindado contra banimento e spam!\e[0m"
 }
 
 while true; do
@@ -89,7 +82,7 @@ while true; do
   echo -e "\e[1;36m1) Abrir canal do YouTube\e[0m"
   echo -e "\e[1;33m2) Banir número\e[0m"
   echo -e "\e[1;35m3) Desbanir número\e[0m"
-  echo -e "\e[1;31m4) Blindar número contra banimento/spam\e[0m"
+  echo -e "\e[1;31m4) Blindar número contra ban e spam\e[0m"
   echo -e "\e[1;37m5) Banir Instagram\e[0m"
   echo -e "\e[1;32m6) Sair\e[0m"
   read -p $'\e[1;36mOpção: \e[0m' opcao
@@ -98,7 +91,7 @@ while true; do
     1) abrir_youtube ;;
     2) banir_numero ;;
     3) desbanir_numero ;;
-    4) blindar_numero contra banimento/spam ;;
+    4) blindar_numero ;;
     5) banir_instagram ;;
     6) echo -e "\e[1;31mSaindo...\e[0m"; break ;;
     *) echo -e "\e[1;31mOpção inválida!\e[0m"; sleep 2 ;;
@@ -108,7 +101,10 @@ while true; do
   read -p $'\e[1;33mPressione ENTER para voltar ao menu...\e[0m'
 done
 
+done
+
 clear
+
 
 
 
