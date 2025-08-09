@@ -1,17 +1,14 @@
-#!/bin/bash
-
 show_logo() {
   clear
-  echo -e "\e[1;34m  __    _    _   _ _    _    _   _ ___  \e[0m"
-  echo -e "\e[1;36m | _ )  / \  | \ | | |  | |  | | | | ___| \e[0m"
+  echo -e "\e[1;34m  ____    _    _   _ _    _    _   _ _____  \e[0m"
+  echo -e "\e[1;36m | __ )  / \  | \ | | |  | |  | | | | ____| \e[0m"
   echo -e "\e[1;32m |  _ \ / _ \ |  \| | |  | |  | | | |  _|   \e[0m"
-  echo -e "\e[1;33m | |) / __ \| |\  | |_| || || | |_  \e[0m"
-  echo -e "\e[1;31m |_//   \\| \|_|__\_/|__| \e[0m"
+  echo -e "\e[1;33m | |_) / ___ \| |\  | |__| |__| |_| | |___  \e[0m"
+  echo -e "\e[1;31m |____/_/   \_\_| \_|____|_____\___/|_____| \e[0m"
   echo
   echo -e "\e[1;35m                by alisonkkjj yt             \e[0m"
   echo
 }
-
 input_numero() {
   while true; do
     read -p "Digite o número (somente números, ex: 5511999998888): " numero
@@ -93,4 +90,5 @@ while true; do
 done
 
 clear
+
 
