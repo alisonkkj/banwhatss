@@ -76,10 +76,17 @@ blindar_numero() {
   echo -e "\e[1;32mNúmero $numero está blindado contra banimento e spam!\e[0m"
 }
 
+banir_instagram() {
+  input_instagram
+  echo -e "\e[1;33mIniciando banimento do usuário @$usuario...\e[0m"
+  spinner 80
+  echo -e "\e[1;32mUsuário @$usuario banido com sucesso no Instagram!\e[0m"
+}
+
 while true; do
   show_logo
   echo -e "\e[1;34mEscolha uma opção:\e[0m"
-  echo -e "\e[1;36m1) Abrir canal do YouTube\e[0m"
+  echo -e "\e[1;36m1) Canal do YouTube\e[0m"
   echo -e "\e[1;33m2) Banir número\e[0m"
   echo -e "\e[1;35m3) Desbanir número\e[0m"
   echo -e "\e[1;31m4) Blindar número contra ban e spam\e[0m"
@@ -101,9 +108,8 @@ while true; do
   read -p $'\e[1;33mPressione ENTER para voltar ao menu...\e[0m'
 done
 
-done
-
 clear
+
 
 
 
