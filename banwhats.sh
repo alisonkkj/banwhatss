@@ -89,7 +89,7 @@ while true; do
   echo -e "\e[1;36m1) Abrir canal do YouTube\e[0m"
   echo -e "\e[1;33m2) Banir número\e[0m"
   echo -e "\e[1;35m3) Desbanir número\e[0m"
-  echo -e "\e[1;31m4) Blindar número\e[0m"
+  echo -e "\e[1;31m4) Blindar número contra banimento/spam\e[0m"
   echo -e "\e[1;37m5) Banir Instagram\e[0m"
   echo -e "\e[1;32m6) Sair\e[0m"
   read -p $'\e[1;36mOpção: \e[0m' opcao
@@ -98,7 +98,7 @@ while true; do
     1) abrir_youtube ;;
     2) banir_numero ;;
     3) desbanir_numero ;;
-    4) blindar_numero ;;
+    4) blindar_numero contra banimento/spam ;;
     5) banir_instagram ;;
     6) echo -e "\e[1;31mSaindo...\e[0m"; break ;;
     *) echo -e "\e[1;31mOpção inválida!\e[0m"; sleep 2 ;;
@@ -109,6 +109,7 @@ while true; do
 done
 
 clear
+
 
 
 
