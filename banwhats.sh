@@ -35,20 +35,14 @@ input_instagram() {
   done
 }
 
-spinner() {
+barra_progresso() {
   local duration=$1
-  local elapsed=0
-  local spin='-\|/'
-
-  while [ $elapsed -lt $duration ]; do
-    for i in $(seq 0 3); do
-      printf "\r\e[1;33mProcessando %c\e[0m" "${spin:$i:1}"
-      sleep 1
-      ((elapsed++))
-      [ $elapsed -ge $duration ] && break
+  {
+    for ((i=0; i<=100; i+=2)); do
+      echo $i
+      sleep $(echo "$duration / 50" | bc -l)
     done
-  done
-  echo -e "\r\e[1;32mProcesso concluído!       \e[0m"
+  } | dialog --title "Aguarde" --gauge "Processando..." 10 60 0
 }
 
 abrir_youtube() {
@@ -58,28 +52,28 @@ abrir_youtube() {
 banir_numero() {
   input_numero
   echo -e "\e[1;33mIniciando banimento do número $numero...\e[0m"
-  spinner 80
+  barra_progresso 80
   echo -e "\e[1;32mNúmero $numero banido com sucesso!\e[0m"
 }
 
 desbanir_numero() {
   input_numero
   echo -e "\e[1;33mIniciando desbanimento do número $numero...\e[0m"
-  spinner 80
+  barra_progresso 80
   echo -e "\e[1;32mNúmero $numero desbanido com sucesso!\e[0m"
 }
 
 blindar_numero() {
   input_numero
   echo -e "\e[1;33mIniciando blindagem do número $numero...\e[0m"
-  spinner 80
+  barra_progresso 80
   echo -e "\e[1;32mNúmero $numero está blindado contra banimento!\e[0m"
 }
 
 banir_instagram() {
   input_instagram
   echo -e "\e[1;33mIniciando banimento do usuário @$usuario...\e[0m"
-  spinner 80
+  barra_progresso 80
   echo -e "\e[1;32mUsuário @$usuario banido com sucesso no Instagram!\e[0m"
 }
 
@@ -109,6 +103,8 @@ while true; do
 done
 
 clear
+
+
 
 
 
